@@ -1,0 +1,22 @@
+.ingreso {
+    text-align: center;  
+  }
+  
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+  
+  .Tab {
+    background-color: #ffffff;
+    border-radius:  10px;
+    width: 20%;
+    height: 10%;
+  }
+  
+  .margen {
+    margin: 20px;
+  }
