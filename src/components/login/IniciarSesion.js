@@ -28,16 +28,19 @@ function IniciarSesion() {
         password: contrasena
       })
     
-      fetch("https://cors-anywhere.herokuapp.com/http://api.cup2022.ir/api/v1/user/login", {
+      fetch("http://127.0.0.1:5002/login/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: lData
       }).then((response) => response.json()).then((data) => {
-        console.log(data);
-        
+        console.log(data.access_token);
         if (data.status === "success") {
-          localStorage.setItem("session", JSON.stringify({"token": data.data.token, "email": usuario}));
-          window.location.href = "/";
+          localStorage.setItem("session", JSON.stringify({"token": data.access_token}));
+          MostarMensaje(data.message, "error");
+          window.location.href = "/home";
+          
+          
+          
         }
         else{
           MostarMensaje(data.message, "error");
